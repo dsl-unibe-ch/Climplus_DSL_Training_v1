@@ -1,0 +1,14 @@
+ipykernel==7.4.0
+pandas==3.1.1
+openai==3.57.0
+requests==2.34.2
+xarray==2026.9.0
+matplotlib==3.11.2
+seaborn==0.13.2
+python-dotenv==1.2.4
+scikit-learn==1.9.1
+umap-learn==0.6.0
+hdbscan==0.8.44
+pyyaml==6.0.4
+plotly==7.1.0
+tqdm==4.70.1
