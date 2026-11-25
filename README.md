@@ -16,21 +16,19 @@ Climplus_DSL_Training_v1/
 
 | No. | Day | Time | Session | Folder |
 |---|---|---|---|---|
-| 01 | 1 | 09:00 | Intro session | |
-| 02 | 1 | 09:15 | Workshop on science integrity / FAIR principles | |
-| 03 | 1 | 10:45 | Workflow management, Git, AI-assisted workflows | `03_Workflow_Git_AI/` |
-| 04 | 1 | 13:00 | Workshop on dataset types and sources | |
-| 05 | 1 | 14:00 | Computational research tools: GPUStack, OnDemand, TextLab | `05_Computational_Research_Tools/` |
-| 06 | 1 | 15:30 | HPC hands-on | `06_HPC/` |
-| 07 | 2 | 09:00 | Python basics (beginner track) | |
-| 08 | 2 | 10:45 | NumPy, pandas (beginner track) | |
-| 09 | 2 | 13:00 | Images, time series, and graphs (beginner track) | |
-| 10 | 2 | 14:45 | LLM-based data processing (beginner track; advanced track 13:00) | `10_LLM_Data_Processing/` |
-| 11 | 2 | 09:00 | Recap: Python basics, NumPy, pandas, images, time series, graphs (experienced track) | |
-| 12 | 2 | 10:45 | Data formats, NetCDF, HDF5, Zarr (experienced track) | |
+| 01 | 1 | 10:45 | Workflow management, Git, AI-assisted workflows | `01_Workflow_Git_AI/` |
+| 02 | 1 | 13:00 | Workshop on dataset types and sources | |
+| 03 | 1 | 14:00 | Computational research tools: GPUStack, OnDemand, TextLab | `03_Computational_Research_Tools/` |
+| 04 | 1 | 15:30 | HPC hands-on | `04_HPC/` |
+| 05 | 2 | 09:00 | Python basics (beginner track) | |
+| 06 | 2 | 10:45 | NumPy, pandas (beginner track) | |
+| 07 | 2 | 13:00 | Images, time series, and graphs (beginner track) | |
+| 08 | 2 | 14:45 | LLM-based data processing (beginner track; advanced track 13:00) | `08_LLM_Data_Processing/` |
+| 09 | 2 | 09:00 | Recap: Python basics, NumPy, pandas, images, time series, graphs (experienced track) | |
+| 10 | 2 | 10:45 | Data formats, NetCDF, HDF5, Zarr (experienced track) | |
 
 - **Session folders** are self-contained: you can work through a session without needing files from other sessions.
-- **Dependencies** are shared across all sessions and installed once from `requirements.txt` (see setup below). Exception: `03_Workflow_Git_AI/` uses its own `pyproject.toml` and `uv.lock` (see its `SETUP.md`); session 06 runs in the same environment.
+- **Dependencies** are shared across all sessions and installed once from `requirements.txt` (see setup below). Exception: `01_Workflow_Git_AI/` uses its own `pyproject.toml` and `uv.lock` (see its `SETUP.md`); session 04 runs in the same environment.
 
 ## Local Environment Setup
 

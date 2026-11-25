@@ -26,7 +26,7 @@ GRID_CELLS = 1440 * 721          # a global 0.25 degree grid, e.g. ERA5
 def find_data():
     here = Path(__file__).resolve().parent
     for d in [Path("data"), here / "data", here.parent / "data", Path("../data"),
-              here.parent / "03_Workflow_Git_AI" / "data"]:     # inside the course repository
+              here.parent / "01_Workflow_Git_AI" / "data"]:     # inside the course repository
         if (d / FILE).exists():
             return d / FILE
     sys.exit(f"Cannot find data/{FILE}. Run this from your course folder.")

@@ -11,7 +11,7 @@ folder with `data/GlobalLandTemperaturesByCountry.csv` in it.
 In a terminal in `clim-course` (VS Code: **Terminal → New Terminal**):
 
 ```
-curl.exe -LO https://raw.githubusercontent.com/dsl-unibe-ch/Climplus_DSL_Training_v1/main/06_HPC/trends.py
+curl.exe -LO https://raw.githubusercontent.com/dsl-unibe-ch/Climplus_DSL_Training_v1/main/04_HPC/trends.py
 uv run python trends.py
 ```
 

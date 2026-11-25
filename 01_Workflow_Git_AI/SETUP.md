@@ -131,8 +131,8 @@ environments), for example `C:\Users\<you>\clim-course` or `~/clim-course`.
 ```powershell
 mkdir clim-course
 cd clim-course
-curl.exe -LO https://raw.githubusercontent.com/dsl-unibe-ch/Climplus_DSL_Training_v1/main/03_Workflow_Git_AI/pyproject.toml
-curl.exe -LO https://raw.githubusercontent.com/dsl-unibe-ch/Climplus_DSL_Training_v1/main/03_Workflow_Git_AI/uv.lock
+curl.exe -LO https://raw.githubusercontent.com/dsl-unibe-ch/Climplus_DSL_Training_v1/main/01_Workflow_Git_AI/pyproject.toml
+curl.exe -LO https://raw.githubusercontent.com/dsl-unibe-ch/Climplus_DSL_Training_v1/main/01_Workflow_Git_AI/uv.lock
 uv sync
 ```
 
