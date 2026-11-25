@@ -3,6 +3,7 @@
     uv run python trends.py                 # measure this laptop (1-3 minutes)
     uv run python trends.py --country 17    # one country only: what a cluster job runs
     uv run python trends.py --collect       # combine the per-country results of a cluster run
+    uv run python trends.py --send          # measure, then post the line to the room's leaderboard
 
 The job: for each country, the warming trend 1951-2012 (degC per decade) with a
 bootstrap 95% interval. Every country is independent of the others, so the job
@@ -21,6 +22,24 @@ import pandas as pd
 FILE = "GlobalLandTemperaturesByCountry.csv"
 NOT_COUNTRIES = {"Africa", "Asia", "Europe", "North America", "South America", "Oceania", "Antarctica"}
 GRID_CELLS = 1440 * 721          # a global 0.25 degree grid, e.g. ERA5
+
+
+# --send: post the report line to the room's leaderboard (off unless you ask).
+# Only the line and the nickname in nickname.txt are sent; nothing else about you or your laptop.
+TOPIC = "https://ntfy.sh/climplus-octef4924s3t"
+
+
+def send(line):
+    import urllib.request
+    file = Path("nickname.txt")                  # in the folder you run from
+    nick = file.read_text(encoding="utf-8").strip()[:24] if file.exists() else ""
+    nick = " ".join(nick.replace("|", "/").split())    # one line, no separators
+    msg = f"{nick} | {line}" if nick else line
+    try:
+        urllib.request.urlopen(urllib.request.Request(TOPIC, data=msg.encode("utf-8")), timeout=10)
+        print(f"sent to the leaderboard{' as ' + nick if nick else ' (no nickname.txt: anonymous)'}")
+    except Exception as e:
+        print(f"could not send ({e}); report the line by hand")
 
 
 def find_data():
@@ -122,10 +141,13 @@ if __name__ == "__main__":
     p.add_argument("--country", type=int, help="compute one country only (1-based), as a cluster array task")
     p.add_argument("--collect", action="store_true", help="combine results/*.csv from a cluster run")
     p.add_argument("--boot", type=int, default=5000, help="bootstrap resamples per country (default 5000)")
+    p.add_argument("--send", action="store_true", help="also post the report line to the room's leaderboard")
     a = p.parse_args()
     if a.collect:
         collect()
     elif a.country:
         one_country(a.country, a.boot)
     else:
-        measure(a.boot)
+        line = measure(a.boot)
+        if a.send:
+            send(line)

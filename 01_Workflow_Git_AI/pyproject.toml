@@ -11,5 +11,14 @@ dependencies = [
     "ipykernel>=7.0",
 ]
 
+# Session 3 only (Whisper on your own CPU): `uv run --group whisper ...`.
+# Kept out of the default env so a missing wheel can never break the Day 1 setup.
+[dependency-groups]
+whisper = [
+    "faster-whisper>=1.2; platform_machine != 'ARM64'",
+    "av<16; platform_machine != 'ARM64'",  # av 16 breaks faster-whisper's decoding
+    "onnxruntime<1.24; sys_platform == 'darwin' and platform_machine == 'x86_64'",  # last Intel-Mac wheels
+]
+
 [tool.uv]
 package = false
