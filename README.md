@@ -34,7 +34,7 @@ Numbered sessions have (or will have) a folder in this repository; the number is
 
 #### Day 2, 2 December: programming and data processing (two parallel tracks)
 
-**Beginner track** (no or very little prior programming experience)
+**Beginner track**
 
 | Time | No. | Session | Folder |
 |---|---|---|---|
@@ -47,7 +47,7 @@ Numbered sessions have (or will have) a folder in this repository; the number is
 | 14:45 – 15:45 | 08 | LLM-based data processing, beginner | [`08_LLM_Data_Processing/beginner/`](08_LLM_Data_Processing/beginner/) |
 | 15:45 – 16:00 | | Q&A and closing session | |
 
-**Experienced track** (prior programming experience, not necessarily in Python)
+**Experienced track**
 
 | Time | No. | Session | Folder |
 |---|---|---|---|
