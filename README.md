@@ -14,18 +14,50 @@ Climplus_DSL_Training_v1/
 └── README.md                  # this file
 ```
 
-| No. | Day | Time | Session | Folder |
-|---|---|---|---|---|
-| 01 | 1 | 10:45 | Workflow management, Git, AI-assisted workflows | `01_Workflow_Git_AI/` |
-| 02 | 1 | 13:00 | Workshop on dataset types and sources | |
-| 03 | 1 | 14:00 | Computational research tools: GPUStack, OnDemand, TextLab | `03_Computational_Research_Tools/` |
-| 04 | 1 | 15:30 | HPC hands-on | `04_HPC/` |
-| 05 | 2 | 09:00 | Python basics (beginner track) | |
-| 06 | 2 | 10:45 | NumPy, pandas (beginner track) | |
-| 07 | 2 | 13:00 | Images, time series, and graphs (beginner track) | |
-| 08 | 2 | 14:45 | LLM-based data processing (beginner track; advanced track 13:00) | `08_LLM_Data_Processing/` |
-| 09 | 2 | 09:00 | Recap: Python basics, NumPy, pandas, images, time series, graphs (experienced track) | |
-| 10 | 2 | 10:45 | Data formats, NetCDF, HDF5, Zarr (experienced track) | |
+### Programme
+
+Numbered sessions have (or will have) a folder in this repository; the number is the start of the folder name.
+
+#### Day 1, 1 December: best practice and foundations
+
+| Time | No. | Session | Folder |
+|---|---|---|---|
+| 09:00 – 09:15 | | Intro session | |
+| 09:15 – 10:15 | | Workshop on science integrity / FAIR principles | |
+| 10:15 – 10:45 | | *break* | |
+| 10:45 – 12:00 | 01 | Workflow management, Git, AI-assisted workflows | [`01_Workflow_Git_AI/`](01_Workflow_Git_AI/) |
+| 12:00 – 13:00 | | *lunch* | |
+| 13:00 – 14:00 | 02 | Workshop on dataset types and sources | |
+| 14:00 – 15:00 | 03 | Computational research tools: GPUStack, OnDemand, TextLab | [`03_Computational_Research_Tools/`](03_Computational_Research_Tools/) |
+| 15:00 – 15:30 | | *break* | |
+| 15:30 – 17:00 | 04 | HPC hands-on | [`04_HPC/`](04_HPC/) |
+
+#### Day 2, 2 December: programming and data processing (two parallel tracks)
+
+**Beginner track** (no or very little prior programming experience)
+
+| Time | No. | Session | Folder |
+|---|---|---|---|
+| 09:00 – 10:15 | 05 | Python basics | |
+| 10:15 – 10:45 | | *break* | |
+| 10:45 – 12:00 | 06 | NumPy, pandas | |
+| 12:00 – 13:00 | | *lunch* | |
+| 13:00 – 14:15 | 07 | Images, time series, and graphs | |
+| 14:15 – 14:45 | | *break* | |
+| 14:45 – 15:45 | 08 | LLM-based data processing, beginner | [`08_LLM_Data_Processing/beginner/`](08_LLM_Data_Processing/beginner/) |
+| 15:45 – 16:00 | | Q&A and closing session | |
+
+**Experienced track** (prior programming experience, not necessarily in Python)
+
+| Time | No. | Session | Folder |
+|---|---|---|---|
+| 09:00 – 10:15 | 09 | Recap: Python basics, NumPy, pandas, images, time series, and graphs | |
+| 10:15 – 10:45 | | *break* | |
+| 10:45 – 12:00 | 10 | Data formats, NetCDF, HDF5, Zarr | |
+| 12:00 – 13:00 | | *lunch* | |
+| 13:00 – 14:15 | 08 | LLM-based data processing, advanced | [`08_LLM_Data_Processing/`](08_LLM_Data_Processing/) |
+| 14:15 – 14:45 | | *break* | |
+| 14:45 – 16:00 | | Q&A and closing session | |
 
 - **Session folders** are self-contained: you can work through a session without needing files from other sessions.
 - **Dependencies** are shared across all sessions and installed once from `requirements.txt` (see setup below). Exception: `01_Workflow_Git_AI/` uses its own `pyproject.toml` and `uv.lock` (see its `SETUP.md`); session 04 runs in the same environment.
