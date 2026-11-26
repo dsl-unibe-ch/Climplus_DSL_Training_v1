@@ -84,9 +84,9 @@ def duration(s):
 
 def measure(n_boot):
     jobs = tasks(n_boot)
-    cores = os.cpu_count() or 1
+    cores = os.process_cpu_count() or 1      # on a cluster: the cores you were given, not the whole node
     print(f"job: warming trend 1951-2012 for {len(jobs)} countries, {n_boot} bootstrap resamples each")
-    print(f"this laptop: {cores} logical cores\n")
+    print(f"this machine: {cores} logical cores\n")
 
     t0 = time.perf_counter()
     serial = [trend(j) for j in jobs]
@@ -108,8 +108,8 @@ def measure(n_boot):
 
     per_task = t1 / len(jobs)
     print(f"\nsame job for every 0.25 degree grid cell ({GRID_CELLS:,} instead of {len(jobs)}):")
-    print(f"   1 core of this laptop    {duration(per_task * GRID_CELLS)}")
-    print(f"  {best_n:>2} cores of this laptop   {duration(per_task * GRID_CELLS * best_t / t1)}")
+    print(f"   1 core of this machine   {duration(per_task * GRID_CELLS)}")
+    print(f"  {best_n:>2} cores of this machine  {duration(per_task * GRID_CELLS * best_t / t1)}")
     print(f"  1,000 cluster cores       {duration(per_task * GRID_CELLS / 1000)}  (if it scaled perfectly)")
 
     print("\n>>> REPORT THIS LINE:")
