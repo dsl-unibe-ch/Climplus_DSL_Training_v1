@@ -88,7 +88,7 @@ Then fill in the blanks in a new file `job.sh`:
 #SBATCH --job-name=trends
 #SBATCH --time=________        # how long may ONE task run? (hh:mm:ss, with margin)
 #SBATCH --mem=________         # memory for ONE task (e.g. 2G)
-#SBATCH --array=1-___          # one task per country: how many countries?
+#SBATCH --array=1-___          # one task per country: how many? (first line trends.py printed)
 
 uv run python trends.py --country $SLURM_ARRAY_TASK_ID
 ```

@@ -5,13 +5,24 @@ folder. Open a terminal in VS Code (**Terminal → New Terminal**) inside
 `clim-course`.
 
 Each step: run the command, read the output, then move on. If a command opens
-a pager (text with `:` at the bottom), press `q` to leave it.
+a pager (text with `:` at the bottom), press `q` to leave it. Warnings like
+`LF will be replaced by CRLF` are harmless: ignore them.
 
 ## 1. What did the agent do?
 
 ```
 git status
 git log --oneline
+```
+
+**`fatal: not a git repository`?** The agent never set up git here (or you are
+in the wrong folder: check with `pwd` that you are in `clim-course`). Start it
+yourself, then continue:
+
+```
+git init
+git add -A
+git commit -m "Start"
 ```
 
 - Which files did the agent commit? Which are not tracked?
@@ -38,7 +49,9 @@ git log --all --oneline
 ## 2. Make a change, see it, save it
 
 Open `analysis.py` (or the agent's script) and change one thing, for example
-the title of the chart. Then:
+the title of the chart. **No script?** Create `notes.md` with one line of text,
+commit it (`git add notes.md`, `git commit -m "Notes"`), and use `notes.md`
+wherever these steps say `analysis.py`. Then:
 
 ```
 git status
@@ -92,6 +105,17 @@ git ls-files
 | your scripts and notebooks | `.venv/` (rebuilt by `uv sync`) |
 | `pyproject.toml` **and** `uv.lock` | API keys, passwords, `.env` files |
 | a README | large or confidential data |
+
+**Does `git ls-files` list files under `.venv/`?** The agent committed your
+environment. Take it out of git (the folder itself stays on your disk) and
+ignore it from now on:
+
+```
+git rm -r --cached .venv
+```
+
+Add a line `.venv/` to `.gitignore` (create the file if it does not exist),
+then `git add .gitignore` and `git commit -m "Stop tracking .venv"`.
 
 Check it: create a file `my_key.txt` with any text in it, then `git status`.
 If git lists it, add a line `*_key.txt` to `.gitignore`, run `git status` again,
