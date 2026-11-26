@@ -129,7 +129,8 @@ def one_country(i, n_boot):
 
 def collect():
     files = sorted(Path("results").glob("*.csv"))
-    rows = [f.read_text(encoding="utf-8").strip().split(",") for f in files]
+    # rsplit: some names contain commas ("Bonaire, Saint Eustatius And Saba")
+    rows = [f.read_text(encoding="utf-8").strip().rsplit(",", 3) for f in files]
     df = pd.DataFrame(rows, columns=["country", "trend", "lo", "hi"]).astype({"trend": float, "lo": float, "hi": float})
     print(f"{len(df)} countries collected. Fastest warming (degC/decade, 95% interval):")
     for r in df.sort_values("trend", ascending=False).head(5).itertuples():
